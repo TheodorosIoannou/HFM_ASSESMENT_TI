@@ -1,0 +1,420 @@
+/**
+ * HF Markets Assessment - Stylesheet
+ * Responsive form styles
+ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #1a1a1a;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2d2d2d;
+    padding: 15px 0;
+    border-bottom: 1px solid #444;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-text {
+    font-size: 10px;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.logo-main {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo-main .hf {
+    color: #fff;
+}
+
+.logo-main .m {
+    color: #c41e3a;
+}
+
+.logo-subtitle {
+    font-size: 9px;
+    color: #888;
+    letter-spacing: 3px;
+    margin-top: -2px;
+}
+
+.nav .btn {
+    padding: 10px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-register,
+.btn-login {
+    background-color: #0a8f4a;
+    color: #fff;
+}
+
+.btn-register:hover,
+.btn-login:hover {
+    background-color: #0b7a3f;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(40, 40, 40, 0.9) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23333" width="100" height="100"/></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.page-title {
+    margin-bottom: 30px;
+}
+
+.page-title h1 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Form Container */
+.form-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-container h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #c41e3a;
+    box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23666" d="M6 9L1 4h10z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+/* Phone Input Group */
+.phone-group .phone-input-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.country-code-input {
+    width: 80px !important;
+    flex-shrink: 0;
+    text-align: center;
+    background-color: #f5f5f5 !important;
+    font-weight: 500;
+}
+
+.phone-input {
+    flex: 1;
+}
+
+/* Password Wrapper */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+.toggle-password svg {
+    width: 20px;
+    height: 20px;
+}
+
+.toggle-password .hidden {
+    display: none;
+}
+
+/* Password Requirements */
+.password-requirements {
+    margin-top: 8px;
+}
+
+.password-requirements small {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Error States */
+.has-error input,
+.has-error select {
+    border-color: #c41e3a;
+}
+
+.error-text {
+    display: block;
+    color: #c41e3a;
+    font-size: 12px;
+    margin-top: 6px;
+    padding-left: 2px;
+}
+
+.general-error {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #c41e3a;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-message h2 {
+    color: #0a8f4a;
+    margin-bottom: 15px;
+}
+
+.success-message p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.success-message a {
+    color: #c41e3a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.success-message a:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #c41e3a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+    background-color: #a01830;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+.btn-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Form Footer */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-footer a {
+    color: #c41e3a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0 15px;
+    }
+
+    .logo-main {
+        font-size: 26px;
+    }
+
+    .page-title h1 {
+        font-size: 32px;
+    }
+
+    .form-container {
+        padding: 30px 25px;
+        margin: 0 10px;
+    }
+
+    .phone-group .phone-input-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .country-code-input {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .logo {
+        align-items: center;
+    }
+
+    .page-title h1 {
+        font-size: 26px;
+    }
+
+    .form-container {
+        padding: 25px 20px;
+    }
+
+    .form-container h2 {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .btn-submit {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Focus visible for accessibility */
+.btn:focus-visible,
+.btn-submit:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #c41e3a;
+    outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.has-error input,
+.has-error select {
+    animation: shake 0.3s ease-in-out;
+}
