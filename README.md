@@ -5,22 +5,52 @@ This project implements registration and login forms with both frontend and back
 
 ---
 
+## Prerequisites
+
+| Software | Download Link | Required |
+|----------|---------------|----------|
+| **Git** | https://git-scm.com/download/win | Yes |
+| **XAMPP** | https://www.apachefriends.org/download.html | Yes (includes PHP) |
+
+> **Note:** We use XAMPP because it's the easiest way to get PHP on Windows. You don't need to start Apache or MySQL from XAMPP - we only use its PHP executable.
+
+---
+
 ## Quick Start Guide (Windows + VS Code + PowerShell)
 
-### Step 1: Install Prerequisites
+### Step 1: Install Git
 
-**Git** (if not installed):
-- Download from: https://git-scm.com/download/win
-- Run installer with default settings
+1. Download from: https://git-scm.com/download/win
+2. Run installer with default settings
+3. Restart VS Code after installation
 
-**PHP via XAMPP** (easiest method):
-1. Download XAMPP from: https://www.apachefriends.org/download.html
-2. Run the installer (keep default settings)
-3. Note the installation path (e.g., `C:\xampp` or `C:\Users\YourName\Desktop\xampp`)
+### Step 2: Install XAMPP
 
-### Step 2: Clone the Repository
+1. Download from: https://www.apachefriends.org/download.html
+2. Run the installer
+3. **Important:** Note where you install it (default is `C:\xampp`)
+4. You do NOT need to open XAMPP Control Panel - we only need the PHP files
+
+### Step 3: Verify Installation
 
 Open PowerShell in VS Code (`Ctrl + `` `) and run:
+
+```powershell
+# Check Git
+git --version
+
+# Check PHP (via XAMPP) - use YOUR xampp path
+C:\xampp\php\php.exe --version
+```
+
+If XAMPP is on your Desktop, use:
+```powershell
+C:\Users\YourUsername\Desktop\xampp\php\php.exe --version
+```
+
+You should see version numbers for both.
+
+### Step 4: Clone the Repository
 
 ```powershell
 cd ~\Desktop
@@ -28,9 +58,9 @@ git clone https://github.com/TheodorosIoannou/HFM_ASSESMENT_TI.git
 cd HFM_ASSESMENT_TI
 ```
 
-### Step 3: Run the PHP Server
+### Step 5: Run the PHP Server (using XAMPP's PHP)
 
-**If XAMPP is in default location (`C:\xampp`):**
+**If XAMPP is in `C:\xampp`:**
 ```powershell
 C:\xampp\php\php.exe -S localhost:8000
 ```
@@ -45,12 +75,12 @@ You should see:
 PHP 8.x.x Development Server (http://localhost:8000) started
 ```
 
-### Step 4: Open in Browser
+### Step 6: Open in Browser
 
 - **Registration:** http://localhost:8000/register.php
 - **Login:** http://localhost:8000/login.php
 
-### Step 5: Stop the Server
+### Step 7: Stop the Server
 
 Press `Ctrl + C` in the PowerShell terminal.
 
@@ -149,12 +179,24 @@ HFM_ASSESMENT_TI/
 
 ## Troubleshooting
 
-**PHP not found:**
+**"php is not recognized" error:**
+
+This means you need to use the full path to XAMPP's PHP:
 ```powershell
-# Find where XAMPP is installed and use full path:
+# Find your XAMPP installation and use the full path:
 C:\xampp\php\php.exe -S localhost:8000
-# or
+
+# If XAMPP is on Desktop:
 C:\Users\YourUsername\Desktop\xampp\php\php.exe -S localhost:8000
+```
+
+**Check if XAMPP's PHP is installed correctly:**
+```powershell
+# Test if file exists (should return True)
+Test-Path C:\xampp\php\php.exe
+
+# Or for Desktop installation:
+Test-Path C:\Users\YourUsername\Desktop\xampp\php\php.exe
 ```
 
 **Port 8000 already in use:**
@@ -163,7 +205,6 @@ C:\Users\YourUsername\Desktop\xampp\php\php.exe -S localhost:8000
 C:\xampp\php\php.exe -S localhost:8080
 ```
 
-**Check if PHP works:**
-```powershell
-C:\xampp\php\php.exe --version
-```
+**XAMPP not installed:**
+
+Download and install from: https://www.apachefriends.org/download.html
